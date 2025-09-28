@@ -11,7 +11,7 @@ import { SplitterGroup, SplitterPanel, SplitterResizeHandle } from 'reka-ui';
         :min-size="20"
         class="border-[1px] border-solid bg-white border-neutral-100 rounded-md flex items-center justify-center"
       >
-    <Calender/>
+    <Calendar/>
     </SplitterPanel>
      <SplitterResizeHandle
         id="splitter-group-1-resize-handle-1"
