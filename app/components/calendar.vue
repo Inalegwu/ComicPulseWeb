@@ -5,16 +5,17 @@ const { data } = useFetch("/api/issues", {});
 <template>
   <ScrollAreaRoot class="w-full h-full">
     <ScrollAreaViewport
-      class="w-full h-full pb-20"
+      class="w-full h-full pb-10"
       style="--scrollbar-size: 10px"
     >
-      <div v-for="issue in data" class="my-2">
+      <!-- TODO: group by release date -->
+      <div v-for="issue in data" class="my-1">
         <div
-          class="p-3 rounded-md border-[1px] border-solid border-neutral-100"
+          class="p-3 flex items-center justify-between rounded-md border-[1px] border-solid border-neutral-100"
         >
-          <span class="text-xs text-neutral-600 font-bold">{{
-            issue.title
-          }}</span>
+          <span class="text-xs text-neutral-700 font-bold">
+            {{ issue.title }}
+          </span>
         </div>
       </div>
     </ScrollAreaViewport>

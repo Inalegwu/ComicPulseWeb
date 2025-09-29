@@ -7,7 +7,9 @@ type Issue = {
 };
 
 export default defineEventHandler(async () => {
-  const issues = await pocket.collection("Issues").getFullList<Issue>();
+  const issues = await pocket.collection("Issues").getFullList<Issue>({
+    sort: "createdAt",
+  });
 
   return issues;
 });

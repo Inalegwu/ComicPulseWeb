@@ -18,10 +18,10 @@ import {
           id="splitter-group-1-panel-1"
           :min-size="60"
           :max-size="70"
-          class="border-[1px] border-solid space-y-10 bg-white border-neutral-100 rounded-md flex flex-col p-4"
+          class="border-[1px] border-solid space-y-4 bg-white border-neutral-100 rounded-md flex flex-col p-4"
         >
           <span class="flex items-center justify-between">
-            <h3 class="font-medium text-xl text-orange-600">Pulse Calendar</h3>
+            <h3 class="font-medium text-2xl text-orange-600">Pulse Calendar</h3>
             <HoverCardRoot>
               <HoverCardTrigger class="text-orange-600">
                 <Info :size="13" />
@@ -99,6 +99,6 @@ import {
 
 <style scoped>
 * {
-  font-family: Geist, sans-serif;
+  font-family: "Geist", sans-serif;
 }
 </style>
