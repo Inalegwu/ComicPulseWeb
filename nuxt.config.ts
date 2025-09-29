@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { Env } from "./env";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,6 +9,14 @@ export default defineNuxtConfig({
   modules: ['@nuxt/fonts','reka-ui/nuxt'],
   vite:{
     plugins:[tailwindcss()]
+  },
+  $meta:{
+    name:"ComicPulse"
+  },
+  runtimeConfig:{
+    public:{
+      POCKETBASE_URL:Env.POCKETBASE_URL
+    }
   },
   fonts:{
     families:[
