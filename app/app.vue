@@ -1,17 +1,23 @@
 <script setup lang="ts">
+import { Info } from "lucide-vue-next";
 import { SplitterGroup, SplitterPanel, SplitterResizeHandle } from 'reka-ui';
 </script>
 
 <template>
   <div class="w-full h-screen bg-gradient-to-br from-neutral-50 to-green-50 flex items-center justify-center">
-    <div class="w-5/6 h-5/6">
+    <div class="w-[90%] h-[90%]">
       <SplitterGroup direction="horizontal" id="splitter-group-1">
  <SplitterPanel
         id="splitter-group-1-panel-1"
         :min-size="20"
-        class="border-[1px] border-solid bg-white border-neutral-100 rounded-md flex items-center justify-center"
+        class="border-[1px] border-solid bg-white border-neutral-100 rounded-md flex flex-col p-4"
       >
-    <Calendar/>
+      <span class="flex items-center justify-between space-x-3">
+      <h3 class="font-medium text-xl">Pulse Calendar</h3>
+      <button class="p-1 rounded-md hover:bg-neutral-100 flex items-center justify-center">
+        <Info/>
+      </button>
+      </span>
     </SplitterPanel>
      <SplitterResizeHandle
         id="splitter-group-1-resize-handle-1"
@@ -49,3 +55,9 @@ import { SplitterGroup, SplitterPanel, SplitterResizeHandle } from 'reka-ui';
     </div>
   </div>
 </template>
+
+<style scoped>
+*{
+  font-family: Geist, sans-serif;
+}
+</style>

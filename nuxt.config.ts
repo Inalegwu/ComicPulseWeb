@@ -8,5 +8,11 @@ export default defineNuxtConfig({
   modules: ['@nuxt/fonts','reka-ui/nuxt'],
   vite:{
     plugins:[tailwindcss()]
+  },
+  fonts:{
+    families:[
+      {name:"Geist",provider:"local",src:"~/assets/fonts/geist.ttf"}
+    ],
+    devtools:true
   }
 })
