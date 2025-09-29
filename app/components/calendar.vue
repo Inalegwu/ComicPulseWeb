@@ -1,13 +1,29 @@
 <script setup lang="ts">
-const issues = ref<Issue[]>([]);
-
-const { data } = useFetch("/api/issues/", {});
-
-console.log({ data });
+const { data } = useFetch("/api/issues", {});
 </script>
 
 <template>
-  render calender views here
+  <ScrollAreaRoot class="w-full h-full">
+    <ScrollAreaViewport
+      class="w-full h-full pb-20"
+      style="--scrollbar-size: 10px"
+    >
+      <div v-for="issue in data" class="my-2">
+        <div
+          class="p-3 rounded-md border-[1px] border-solid border-neutral-100"
+        >
+          <span class="text-xs text-neutral-600 font-bold">{{
+            issue.title
+          }}</span>
+        </div>
+      </div>
+    </ScrollAreaViewport>
+    <ScrollAreaScrollbar>
+      <ScrollAreaThumb
+        class="flex-1 bg-neutral-300 rounded-[10px] relative before:content-[''] before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:translate-y-1/2 before:w-full before:h-full before:min-h-[44px]"
+      />
+    </ScrollAreaScrollbar>
+  </ScrollAreaRoot>
   <!-- <CalendarRoot
     v-slot="{ weekDays, grid }"
     :is-date-unavailable="isDateUnavailable"
